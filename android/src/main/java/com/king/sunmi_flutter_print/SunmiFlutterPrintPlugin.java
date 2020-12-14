@@ -111,10 +111,11 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
       this.printOriText(text);
     }
     else if(call.method.equals("printColumnText")){
-      List<String> txt = call.argument("text");
+     // List<String> txt = call.argument("text");
       
-      String[] text = new String[txt.size()];
-      text = txt.toArray(txt);
+      String[] text = new String[]{"Hello","World"};
+        //String[txt.size()];
+      //text = txt.toArray(txt);
       int[] width = call.argument("width");
       int[] align = call.argument("align");
       this.printColumnText(text,width,align);

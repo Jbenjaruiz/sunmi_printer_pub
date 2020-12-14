@@ -119,14 +119,10 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
             text[i] = s.toString();
          i++;
         }
-     // String[] text = call.argument("text").toArray(new String[call.argument("text").size()]);
-     // String[] text = new String[call.argument("text").size()];
-      //text = call.argument("text").toArray(call.argument("text"));
       //String[] text = call.argument("text");
       int[] width = call.argument("width");
       int[] align = call.argument("align");
       this.printColumnText(text,width,align);
-      //text,width,align
     }
     else if(call.method.equals("printQRCode")){
       String text = call.argument("text");
@@ -557,10 +553,6 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
       return;
     }
     try {
-    // String text = ;
-     // int[] width = ;
-     // int[] align = ;
-      //new String[]{"hello","print","world"}, new int[]{4,4,8}, new int[]{1,1,1},
       sunmiPrinterService.printColumnsText(textArray,widthArray,alignArray, null);
       //textArray,widthArray,alignArray
     } catch (RemoteException e) {

@@ -125,7 +125,7 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
       //String[] text = call.argument("text");
       int[] width = call.argument("width");
       int[] align = call.argument("align");
-      //this.printColumnText(text,width,align);
+      this.printColumnText(text,width,align);
       //text,width,align
     }
     else if(call.method.equals("printQRCode")){

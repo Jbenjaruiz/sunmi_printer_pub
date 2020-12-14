@@ -550,10 +550,11 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
       return;
     }
     try {
-     String text = new String[]{"hello","print","world"};
-      int[] width = new int[]{4,4,8};
-      int[] align = new int[]{1,1,1};
-      sunmiPrinterService.printColumnsText(textArray,widthArray,alignArray, null);
+    // String text = ;
+     // int[] width = ;
+     // int[] align = ;
+      sunmiPrinterService.printColumnsText(new String[]{"hello","print","world"}, new int[]{4,4,8}, new int[]{1,1,1}, null);
+      //textArray,widthArray,alignArray
     } catch (RemoteException e) {
       handleRemoteException(e);
     }

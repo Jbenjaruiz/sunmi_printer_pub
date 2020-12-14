@@ -111,14 +111,14 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
       this.printOriText(text);
     }
     else if(call.method.equals("printColumnText")){
-     // List<String> txt = call.argument("text");
+      //List<String> txt = call.argument("text");
       
-      //String[] text = new String[]{"Hello","World"};
-        //String[txt.size()];
+      String[] text = new String[]{"Hello","World"};
+       // String[txt.size()];
       //text = txt.toArray(txt);
-     // int[] width = call.argument("width");
-      //int[] align = call.argument("align");
-      this.printColumnText();
+      int[] width = call.argument("width");
+      int[] align = call.argument("align");
+      this.printColumnText(text,width,align);
       //text,width,align
     }
     else if(call.method.equals("printQRCode")){
@@ -543,7 +543,7 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
    * @param widthArray
    * @param alignArray
    */
-  public void printColumnText(){
+  public void printColumnText(final String[] textArray, final int[] widthArray, final int[] alignArray){
     //final String[] textArray, final int[] widthArray, final int[] alignArray
     if(sunmiPrinterService == null){
       //TODO Service disconnection processing
@@ -553,7 +553,8 @@ public class SunmiFlutterPrintPlugin implements MethodCallHandler {
     // String text = ;
      // int[] width = ;
      // int[] align = ;
-      sunmiPrinterService.printColumnsText(new String[]{"hello","print","world"}, new int[]{4,4,8}, new int[]{1,1,1}, null);
+      //new String[]{"hello","print","world"}, new int[]{4,4,8}, new int[]{1,1,1},
+      sunmiPrinterService.printColumnsText(textArray,widthArray,alignArray, null);
       //textArray,widthArray,alignArray
     } catch (RemoteException e) {
       handleRemoteException(e);
